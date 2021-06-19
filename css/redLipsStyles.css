@@ -1,0 +1,508 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@font-face{
+	font-family: Helvetica Neue;
+	src: url(../assets/fonts/HelveticaNeue.ttf);
+}
+@font-face{
+	font-family: Poppins;
+	src:url(../assets/fonts/Poppins-Light.ttf);;
+}
+@-webkit-keyframes tx{
+	0%{-webkit-transform: translateX(0px);transform: translateX(0px);}
+	100%{-webkit-transform: translateX(-2430px);transform: translateX(-2430px);}
+}
+@keyframes tx{
+	0%{-webkit-transform: translateX(0px);transform: translateX(0px);}
+	100%{-webkit-transform: translateX(-2430px);transform: translateX(-2430px);}
+}
+
+html{
+	overflow: hidden;
+	height: 100%;
+}
+
+body{
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+iframe{
+	width: 100%;
+	height: 700px;
+	margin-bottom: 30px;
+}
+
+.bodycopy{
+	font-family: Helvetica Neue;
+	line-height: 1.5;
+	font-size: 1rem;
+	padding-right: 25px;
+}
+
+.quote{
+	font-family: Helvetica Neue;
+	font-size: 1.6rem;
+	padding-bottom: 25px;
+	padding-right: 25px;
+}
+
+.email-type{
+	font-family: Helvetica Neue;
+	font-size: 1.4rem;
+}
+
+.poppins{
+	font-family: Poppins;
+	font-size: 3rem;
+	line-height: 1.3;
+}
+
+.tiny-text{
+	font-family: Helvetica;
+	font-size: 12px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+}
+
+.desc-type{
+	font-family: Helvetica;
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+
+#tag-space{
+	padding-bottom: 15px;
+}
+
+#body-container{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	/*background-color: #0E0E0E;*/
+}
+
+#content-container{
+	height: inherit;
+	width: inherit;
+	position: relative;
+	overflow-y: auto;
+	background-color: #0E0E0E; /*This is new*/
+	color: white;
+}
+header{
+	height: 70px;
+	background-color: #0E0E0E;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+	left: 0px;
+	z-index: 5;
+}
+header p{
+	font-family: Poppins;
+	font-size: 20px;
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+	z-index: 6;
+	-webkit-transition: color 0s linear 1s;
+	-o-transition: color 0s linear 1s;
+	transition: color 0s linear 1s;
+}
+
+/*Hamburger menu and animation properties*/
+#ham-menu{
+	height: 34px;
+	width: 24px;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+	cursor: pointer;
+	z-index: 6;
+}
+#ham-menu span{
+	display: block;
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	left: 0;
+	background-color: rgba(255, 255, 255, 1.0);
+	border-radius: 20px;
+	-webkit-transition: top 0.4s ease-in-out 0s, background-color 0s linear 1s, -webkit-transform 0.4s ease-in-out 0s;
+	transition: top 0.4s ease-in-out 0s, background-color 0s linear 1s, -webkit-transform 0.4s ease-in-out 0s;
+	-o-transition: top 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s, background-color 0s linear 1s;
+	transition: top 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s, background-color 0s linear 1s;
+	transition: top 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0s, background-color 0s linear 1s, -webkit-transform 0.4s ease-in-out 0s;
+	pointer-events: none;
+}
+#ham-menu span:nth-child(1){
+	top: 8px;
+}
+#ham-menu span:nth-child(2), #ham-menu span:nth-child(3){
+	visibility: hidden;
+	top: 16px;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+#ham-menu span:nth-child(4){
+	top: 24px;
+}
+#ham-menu.open span:nth-child(1), #ham-menu.open span:nth-child(4){
+	top: 16px;
+	width: 0%;
+	left: 50%;
+	background-color: black;
+}
+#ham-menu.open span:nth-child(2){
+	visibility: visible;
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	background-color: black;
+}
+#ham-menu.open span:nth-child(3){
+	visibility: visible;
+	-webkit-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+	background-color: black;
+}
+
+/*Properties of the bubble that shows after clicking the hamburger menu*/
+#overlay{
+	height: 10px;
+	width: 10px;
+	background-color: rgba(255,255,255,1.0);
+	position: absolute;
+	top: 30px;
+	right: 35px;
+	border-radius: 50%;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0s;
+	transition: -webkit-transform 1s ease-in-out 0s;
+	-o-transition: transform 1s ease-in-out 0s;
+	transition: transform 1s ease-in-out 0s;
+	transition: transform 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+	-webkit-transform: scale(3);
+	    -ms-transform: scale(3);
+	        transform: scale(3);
+	visibility: hidden;
+}
+#overlay.fullscreen{
+	-webkit-transform: scale(400);
+	    -ms-transform: scale(400);
+	        transform: scale(400);
+	/*Might add this to media queries based on screen size*/
+}
+/*Properties of the content inside the overlay bubble*/
+.overlay-container{
+	width: 100%;
+	height: calc(100% - 110px);
+	position: fixed;
+	top: 110px;
+	left: 0px;
+	z-index: 5;
+	visibility: hidden;
+}
+.page-links-container{
+	height: 60%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	opacity: 0; /* This is new */
+	-webkit-transition: opacity 0.9s linear 0s;
+	-o-transition: opacity 0.9s linear 0s;
+	transition: opacity 0.9s linear 0s; /* This is new */
+}
+.page-link:before{
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 3px;
+	bottom: 0px;
+	background-color: black;
+	visibility: hidden;
+	-webkit-transition: width 0.5s ease-in-out 0s;
+	-o-transition: width 0.5s ease-in-out 0s;
+	transition: width 0.5s ease-in-out 0s;
+}
+.page-link{
+	position: relative;
+	text-decoration: none;
+	color: black;
+	font-size: 3rem;
+	/*visibility: hidden;*/ /* This is new */
+}
+.page-link:visited{
+	color: black;
+}
+.page-link:hover{
+	color: black;
+}
+.page-link:hover:before{
+	visibility: visible;
+	width: 100%;
+}
+.additional-info-container{
+	height: 40%;
+
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	opacity: 0; /* This is new */
+	-webkit-transition: opacity 1s linear 0s;
+	-o-transition: opacity 1s linear 0s;
+	transition: opacity 1s linear 0s; /* This is new */
+	color: black;
+}
+
+#ig-icon{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20px;
+}
+
+.home-nav:before{
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	bottom: 0px;
+	background-color: white;
+	visibility: hidden;
+	-webkit-transition: width 0.5s ease-in-out 0s;
+	-o-transition: width 0.5s ease-in-out 0s;
+	transition: width 0.5s ease-in-out 0s;
+}
+
+.home-nav{
+	color: white;
+	text-decoration: none;
+}
+.home-nav:visited{
+	color: white;
+}
+.home-nav:hover{
+	color: white;
+}
+.home-nav:hover:before{
+	visibility: visible;
+	width: 100%;
+}
+
+#add-desc{
+	text-align: center;
+	margin-top: 2rem;
+	/*visibility: hidden;*/ /* This is new */
+}
+
+#add-email{
+	text-align: center;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 50px;
+	text-decoration: none;
+	color: black;
+	/*visibility: hidden;*/ /* This is new */
+}
+
+/*Props for the container that holds the project name*/
+.project-title-container{
+	margin-left: 30px;
+}
+
+/*Props for the large image*/
+.image-container{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 30px 30px;
+}
+.big-img{
+	width: 100%;
+	max-width: 2400px;
+}
+
+
+/*Props for text under the big image*/
+.image-dets-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0px 30px 0px 30px;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+.image-dets-container ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.long-description{
+	width: 60%;
+}
+
+.image-dets-headline{
+	width: 60%;
+}
+.image-dets-type{
+	width: 20%;
+}
+.image-dets-people{
+	width: 20%;
+}
+
+/*Props for the smaller images*/
+.one-one-imgs-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 30px 30px;
+	justify-content: space-between;
+}
+.sml-img{
+	width: 48%;
+	height: auto;
+	max-width: 1000px;
+}
+
+#right-sml-img{
+	right: 0;
+}
+
+.marquee-container{
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0px 30px 50px 30px;
+}
+#marquee{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	overflow-x: hidden;
+}
+.projects-item-container{
+	position: relative;
+	min-width: 270px;
+	-webkit-animation: tx 35s linear infinite;
+	        animation: tx 35s linear infinite;
+}
+.tags-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.tag{
+	margin-right: 10px;
+	font-family: Poppins;
+	font-size: 0.8rem;
+}
+.project-name{
+	color: white;
+	font-family: Poppins;
+	font-size: 2rem;
+	position: relative;
+	text-decoration: none;
+}
+.project-name:before{
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	bottom: 0px;
+	left: 0px;
+	background-color: white;
+	visibility: hidden;
+	-webkit-transition: width 0.5s ease-in-out 0s;
+	-o-transition: width 0.5s ease-in-out 0s;
+	transition: width 0.5s ease-in-out 0s;
+}
+.project-name:visited{
+	color: white;
+}
+.project-name:hover{
+	color: white;
+}
+.project-name:hover:before{
+	visibility: visible;
+	width: 100%;
+}
+
+.hide{
+	opacity: 0; /* This is new */
+}
+.show{
+	opacity: 1; /* This is new */
+}
+.fade-out-timing{
+	-webkit-transition: opacity 1.8s linear 0s;
+	-o-transition: opacity 1.8s linear 0s;
+	transition: opacity 1.8s linear 0s;	/* This is new */
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+	.image-dets-headline{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.image-dets-type{
+		width: 30%;
+	}
+	.image-dets-people{
+		width: 70%;
+	}
+	.long-description{
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 480px){
+	.image-dets-headline{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.image-dets-type{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.image-dets-people{
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.people-container{
+		width: 50%;
+	}
+	.long-description{
+		width: 100%;
+		margin-top: 10px;
+	}
+}
