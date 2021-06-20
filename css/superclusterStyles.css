@@ -412,7 +412,7 @@ header p{
 }
 .projects-item-container{
 	position: relative;
-	min-width: 270px;
+	margin-right: 70px;
 	-webkit-animation: tx 35s linear infinite;
 	        animation: tx 35s linear infinite;
 }
